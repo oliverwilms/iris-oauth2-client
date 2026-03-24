@@ -1,0 +1,15 @@
+services:
+
+  client:
+    init: true
+    hostname: client
+    build:
+      context: .
+    #image: workshop-iris-oauth:client
+    command: --check-caps false
+    container_name: client
+    ports:
+    - "9091:52773"
+    - "8081:1972"
+    volumes:
+    - .:/app
